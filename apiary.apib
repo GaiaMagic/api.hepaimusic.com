@@ -2,3 +2,111 @@ FORMAT: 1A
 HOST: http://hepaimusic.com/v1/
 
 # 合拍 API
+
+# Group Project
+
+Collaborate with other users in making music
+
+## Own Projects [/user/projects{?per}{?page}]
+
+Own project collection
+
++ Parameters
+
+    + per = `10` (optional, number) ... number of results per page
+
+    + page = `1` (optional, number) ... current page number
+
++ Model (application/json)
+
+    + Body
+
+            [{
+                "id": "1",
+                "own": true,
+                "name": "测试",
+                "description": "测试"
+            }, {
+                "id": "2",
+                "own": true,
+                "name": "再测试",
+                "description": "再测试"
+            }]
+
+### List Own Project [GET]
+
+Get list of own projects
+
++ Response 200
+
+    [Own Projects][]
+
+## Project [/projects{?type}{?per}{?page}]
+
+Project awesomeness
+
++ Model (application/json)
+
+    + Body
+
+            {
+                "id": "1",
+                "own": true,
+                "name": "测试",
+                "description": "测试"
+            }
+
+### Creating Project [POST]
+
+Create new project
+
++ Request (application/json)
+
+        {
+            "name": "测试"
+            "description": "测试"
+        }
+
++ Response 201 (application/json)
+
+    [Project][]
+
+### List Projects [GET]
+
+List of projects
+
++ Parameters
+
+    + type = `all` (optional, string) ... type of projects to list. possible values are `all`, `owner`, `member`
+
+    + per = `10` (optional, number) ... number of results per page
+
+    + page = `1` (optional, number) ... current page number
+
++ Response 200 (application/json)
+
+    [Own Projects][]
+
+### Single Project [/projects/{projectId}]
+
+Existing project
+
+#### Updating Project [PUT]
+
+Update existing project
+
++ Request (application)
+
+        {
+            "name": "不测试了"
+        }
+
++ Response 200
+
+    [Project][]
+
+#### Deleting Project [DELETE]
+
+Delete existing project
+
++ Response 204
