@@ -1,5 +1,9 @@
 FORMAT: 1A
-HOST: http://hepaimusic.com/v1/
+HOST: https://hepaimusic.com/api
+CURRENT VERSION: v2
+
+## 指定版本
+通过 Http Header `Accept: application/vnd.hepaimusic.v2`
 
 # 合拍 API
 
@@ -7,30 +11,39 @@ HOST: http://hepaimusic.com/v1/
 
 Collaborate with other users in making music
 
-## Own Projects [/user/projects{?per}{?page}]
+## Own Projects [/user/projects]
 
-Own project collection
+List your projects
 
 + Parameters
-
-    + per = `10` (optional, number) ... number of results per page
-
-    + page = `1` (optional, number) ... current page number
+    
+    + type = `all` (optional, string) ... Can be one of { all, owner, public, private, member }.
 
 + Model (application/json)
 
     + Body
 
             [{
-                "id": "1",
-                "own": true,
-                "name": "测试",
-                "description": "测试"
+                "id": "529d526282ae474d3100000c",
+                "name": "test",
+                "description": "",
+                "description_html": "",
+                "public": true,
+                "created_at": "2013-12-03T11:39:14+08:00",
+                "updated_at": "2013-12-03T11:39:14+08:00",
+                "user": {},
+                "members": []
+
             }, {
-                "id": "2",
-                "own": true,
-                "name": "再测试",
-                "description": "再测试"
+                "id": "529d526282ae474d3100900c",
+                "name": "test2",
+                "description": "",
+                "description_html": "",
+                "public": true,
+                "created_at": "2013-12-03T11:39:14+08:00",
+                "updated_at": "2013-12-03T11:39:14+08:00",
+                "user": {},
+                "members": []
             }]
 
 ### List Own Project [GET]
