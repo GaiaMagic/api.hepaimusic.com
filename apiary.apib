@@ -32,26 +32,26 @@ List own projects
     + Body
 
             [{
-                "id": "529d526282ae474d3100000c",
-                "name": "test",
-                "description": "",
-                "description_html": "",
-                "public": true,
-                "created_at": "2013-12-03T11:39:14+08:00",
-                "updated_at": "2013-12-03T11:39:14+08:00",
-                "user": {},
-                "members": []
+                id: "529d526282ae474d3100000c",
+                name: "test",
+                description: "",
+                description_html: "",
+                public: true,
+                created_at: "2013-12-03T11:39:14+08:00",
+                updated_at: "2013-12-03T11:39:14+08:00",
+                user: {},
+                members: []
 
             }, {
-                "id": "529d526282ae474d3100900c",
-                "name": "test2",
-                "description": "",
-                "description_html": "",
-                "public": true,
-                "created_at": "2013-12-03T11:39:14+08:00",
-                "updated_at": "2013-12-03T11:39:14+08:00",
-                "user": {},
-                "members": []
+                id: "529d526282ae474d3100900c",
+                name: "test2",
+                description: "",
+                description_html: "",
+                public: true,
+                created_at: "2013-12-03T11:39:14+08:00",
+                updated_at: "2013-12-03T11:39:14+08:00",
+                user: {},
+                members: []
             }]
 
 ### List Own Project [GET]
@@ -71,22 +71,22 @@ Project awesomeness
     + Body
 
             {
-                "id": "1",
-                "own": true,
-                "name": "测试",
-                "description": "测试",
-                "description_html": "测试",
-                "current_audio": {
-                    "id": "audio_id",
-                    "name": "xxx",
-                    "url": "http://xxx.xx",
-                    "source_url": "http://xxx.xxxx",
-                    "current_version": true
-                    "user": {
-                        "id": "audio_user_id"
-                        "name": "name",
-                        "nickname": "nickname",
-                        "avatars": {
+                id: "1",
+                own: true,
+                name: "测试",
+                description: "测试",
+                description_html: "测试",
+                current_audio: {
+                    id: "audio_id",
+                    name: "xxx",
+                    url: "http://xxx.xx",
+                    source_url: "http://xxx.xxxx",
+                    current_version: true
+                    user: {
+                        id: "audio_user_id"
+                        name: "name",
+                        nickname: "nickname",
+                        avatars: {
                             "24x24": "",
                             "50x50": "",
                             "80x80": "",
@@ -96,11 +96,11 @@ Project awesomeness
                         }
                     }
                 },
-                "public": true,
-                "created_at": "2013-12-12T18:00:52+08:00",
-                "updated_at": "2013-12-12T18:00:52+08:00",
-                "user": {},
-                "members": []
+                public: true,
+                created_at: "2013-12-12T18:00:52+08:00",
+                updated_at: "2013-12-12T18:00:52+08:00",
+                user: {},
+                members: []
             }
 
 ### Creating Project [POST]
@@ -110,10 +110,10 @@ Create new project
 + Request (application/json)
 
         {
-            "name": "测试",
-            "description": "测试",
-            "public": true,
-            "member_ids": ['ID']
+            name: "测试",
+            description: "测试",
+            public: true,
+            member_ids: ['ID']
         }
 
 + Response 201 (application/json)
@@ -153,10 +153,10 @@ Update existing project
 + Request (application)
 
         {
-            "name": "测试",
-            "description": "测试",
-            "public": true,
-            "member_ids": ['ID']
+            name: "测试",
+            description: "测试",
+            public: true,
+            member_ids: ['ID']
         }
 
 + Response 200
