@@ -155,11 +155,27 @@ Create new project
 
 ### GET /user/projects
 
-Get list of own projects
+Get your projects
 
 + Parameters
 
     + type = `all` (optional, string) ... Type of projects to list. Possible values are `all`, `owner`, `member`, `public`, `private`
+
+    + per = `10` (optional, number) ... number of results per page
+
+    + page = `1` (optional, number) ... current page number
+
++ Response 200
+
+    [Project List][]
+
+### GET /users/:user/projects
+
+Get user projects
+
++ Parameters
+
+    + type = `owner` (optional, string) ... Type of projects to list. Possible values are `all`, `owner`, `member`
 
     + per = `10` (optional, number) ... number of results per page
 
