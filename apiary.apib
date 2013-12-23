@@ -138,21 +138,32 @@ List of projects
 
 Existing project
 
-#### Updating Project [PUT]
+#### Get a Project [GET]
+
+Get existing project
+
++ Response 200
+
+    [Project][]
+
+#### Update a Project [PUT]
 
 Update existing project
 
 + Request (application)
 
         {
-            "name": "不测试了"
+            "name": "测试",
+            "description": "测试",
+            "public": true,
+            "member_ids": ['ID']
         }
 
 + Response 200
 
     [Project][]
 
-#### Deleting Project [DELETE]
+#### Delete a Project [DELETE]
 
 Delete existing project
 
