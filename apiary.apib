@@ -95,10 +95,6 @@ Delete existing project
 
 List own projects
 
-+ Parameters
-    
-    + type = `all` (optional, string) ... Type of projects to list. Possible values are `all`, `owner`, `member`, `public`, `private`
-
 + Model (application/json)
 
     + Body
@@ -130,17 +126,21 @@ List own projects
 
 Get list of own projects
 
++ Parameters
+
+    + type = `all` (optional, string) ... Type of projects to list. Possible values are `all`, `owner`, `member`, `public`, `private`
+
+    + per = `10` (optional, number) ... number of results per page
+
+    + page = `1` (optional, number) ... current page number
+
 + Response 200
 
     [Project List][]
 
-## Project [/projects]
-
-Project awesomeness
-
 ### List Projects [GET]
 
-List of projects
+List of public projects
 
 + Parameters
 
