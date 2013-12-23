@@ -19,7 +19,7 @@ CURRENT VERSION: v2
 
 Collaborate with other users in making music
 
-## Own Projects [/user/projects]
+## Project List [/user/projects]
 
 List own projects
 
@@ -60,9 +60,9 @@ Get list of own projects
 
 + Response 200
 
-    [Own Projects][]
+    [Project List][]
 
-## Project [/projects{?type}{?per}{?page}]
+## Project [/projects]
 
 Project awesomeness
 
@@ -74,7 +74,33 @@ Project awesomeness
                 "id": "1",
                 "own": true,
                 "name": "测试",
-                "description": "测试"
+                "description": "测试",
+                "description_html": "测试",
+                "current_audio": {
+                    "id": "audio_id",
+                    "name": "xxx",
+                    "url": "http://xxx.xx",
+                    "source_url": "http://xxx.xxxx",
+                    "current_version": true
+                    "user": {
+                        "id": "audio_user_id"
+                        "name": "name",
+                        "nickname": "nickname",
+                        "avatars": {
+                            "24x24": "",
+                            "50x50": "",
+                            "80x80": "",
+                            "150x150": "",
+                            "240x240": "",
+                            "origin": ""
+                        }
+                    }
+                },
+                "public": true,
+                "created_at": "2013-12-12T18:00:52+08:00",
+                "updated_at": "2013-12-12T18:00:52+08:00",
+                "user": {},
+                "members": []
             }
 
 ### Creating Project [POST]
@@ -84,8 +110,10 @@ Create new project
 + Request (application/json)
 
         {
-            "name": "测试"
-            "description": "测试"
+            "name": "测试",
+            "description": "测试",
+            "public": true,
+            "member_ids": ['ID']
         }
 
 + Response 201 (application/json)
@@ -104,7 +132,7 @@ List of projects
 
 + Response 200 (application/json)
 
-    [Own Projects][]
+    [Project List][]
 
 ### Single Project [/projects/{projectId}]
 
