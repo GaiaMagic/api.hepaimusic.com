@@ -19,6 +19,78 @@ CURRENT VERSION: v2
 
 Collaborate with other users in making music
 
+## Project [/projects/{projectId}]
+
+Existing project
+
++ Model (application/json)
+
+    + Body
+
+            {
+                id: "1",
+                own: true,
+                name: "测试",
+                description: "测试",
+                description_html: "测试",
+                current_audio: {
+                    id: "audio_id",
+                    name: "xxx",
+                    url: "http://xxx.xx",
+                    source_url: "http://xxx.xxxx",
+                    current_version: true
+                    user: {
+                        id: "audio_user_id"
+                        name: "name",
+                        nickname: "nickname",
+                        avatars: {
+                            "24x24": "",
+                            "50x50": "",
+                            "80x80": "",
+                            "150x150": "",
+                            "240x240": "",
+                            "origin": ""
+                        }
+                    }
+                },
+                public: true,
+                created_at: "2013-12-12T18:00:52+08:00",
+                updated_at: "2013-12-12T18:00:52+08:00",
+                user: {},
+                members: []
+            }
+
+### Get a Project [GET]
+
+Get existing project
+
++ Response 200
+
+    [Project][]
+
+### Update a Project [PUT]
+
+Update existing project
+
++ Request (application)
+
+        {
+            name: "测试",
+            description: "测试",
+            public: true,
+            member_ids: ['ID']
+        }
+
++ Response 200
+
+    [Project][]
+
+### Delete a Project [DELETE]
+
+Delete existing project
+
++ Response 204
+
 ## Project List [/user/projects]
 
 List own projects
@@ -66,42 +138,19 @@ Get list of own projects
 
 Project awesomeness
 
-+ Model (application/json)
+### List Projects [GET]
 
-    + Body
+List of projects
 
-            {
-                id: "1",
-                own: true,
-                name: "测试",
-                description: "测试",
-                description_html: "测试",
-                current_audio: {
-                    id: "audio_id",
-                    name: "xxx",
-                    url: "http://xxx.xx",
-                    source_url: "http://xxx.xxxx",
-                    current_version: true
-                    user: {
-                        id: "audio_user_id"
-                        name: "name",
-                        nickname: "nickname",
-                        avatars: {
-                            "24x24": "",
-                            "50x50": "",
-                            "80x80": "",
-                            "150x150": "",
-                            "240x240": "",
-                            "origin": ""
-                        }
-                    }
-                },
-                public: true,
-                created_at: "2013-12-12T18:00:52+08:00",
-                updated_at: "2013-12-12T18:00:52+08:00",
-                user: {},
-                members: []
-            }
++ Parameters
+
+    + per = `10` (optional, number) ... number of results per page
+
+    + page = `1` (optional, number) ... current page number
+
++ Response 200 (application/json)
+
+    [Project List][]
 
 ### Creating Project [POST]
 
@@ -119,52 +168,3 @@ Create new project
 + Response 201 (application/json)
 
     [Project][]
-
-### List Projects [GET]
-
-List of projects
-
-+ Parameters
-
-    + per = `10` (optional, number) ... number of results per page
-
-    + page = `1` (optional, number) ... current page number
-
-+ Response 200 (application/json)
-
-    [Project List][]
-
-### Single Project [/projects/{projectId}]
-
-Existing project
-
-#### Get a Project [GET]
-
-Get existing project
-
-+ Response 200
-
-    [Project][]
-
-#### Update a Project [PUT]
-
-Update existing project
-
-+ Request (application)
-
-        {
-            name: "测试",
-            description: "测试",
-            public: true,
-            member_ids: ['ID']
-        }
-
-+ Response 200
-
-    [Project][]
-
-#### Delete a Project [DELETE]
-
-Delete existing project
-
-+ Response 204
