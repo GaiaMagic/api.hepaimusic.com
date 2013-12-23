@@ -91,7 +91,7 @@ Delete existing project
 
 + Response 204
 
-## Project List [/user/projects]
+## Project List [/projects]
 
 List own projects
 
@@ -121,22 +121,6 @@ List own projects
                 user: {},
                 members: []
             }]
-
-### List Own Project [GET]
-
-Get list of own projects
-
-+ Parameters
-
-    + type = `all` (optional, string) ... Type of projects to list. Possible values are `all`, `owner`, `member`, `public`, `private`
-
-    + per = `10` (optional, number) ... number of results per page
-
-    + page = `1` (optional, number) ... current page number
-
-+ Response 200
-
-    [Project List][]
 
 ### List Projects [GET]
 
@@ -168,3 +152,20 @@ Create new project
 + Response 201 (application/json)
 
     [Project][]
+
+### GET /user/projects
+
+Get list of own projects
+
++ Parameters
+
+    + type = `all` (optional, string) ... Type of projects to list. Possible values are `all`, `owner`, `member`, `public`, `private`
+
+    + per = `10` (optional, number) ... number of results per page
+
+    + page = `1` (optional, number) ... current page number
+
++ Response 200
+
+    [Project List][]
+
