@@ -212,3 +212,57 @@ Project members
 project-owner可以退出任意成员
 
 + Response 204
+
+## Project Audio [/projects/{project_id}/audio]
+
+Project Audio
+
++ Model (application/json)
+
+    + Body
+
+            {
+                id: "1",
+                name: "name",
+                url: "audio url",
+                source_url: "audio source url",
+                current_version: true
+                user: {
+                    id: "2"
+                    name: "user name",
+                    nickname: "user nickname",
+                    avatars: {
+                        "24x24": "",
+                        "50x50": "",
+                        "80x80": "",
+                        "150x150": "",
+                        "240x240": "",
+                        "origin": ""
+                    }
+                }
+            }
+
+### Get project audio list [GET]
+
+音频附件列表
+
++ Response 200
+
+    [Project Audio][]
+
+### Create project audio [POST]
+
+上传音频附件
+
++ Request (application/json)
+
+        {
+            name: "name",
+            url: "audio url",
+            source_url: "audio source url",
+            project_id: "projece_id"
+        }
+
++ Response 201
+
+    [Project Audio][]
