@@ -19,7 +19,7 @@ CURRENT VERSION: v2
 
 Collaborate with other users in making music
 
-## Project [/projects/{projectId}]
+## Project [/projects/{project_id}]
 
 Existing project
 
@@ -72,7 +72,7 @@ Get existing project
 
 Update existing project
 
-+ Request (application)
++ Request (application/json)
 
         {
             name: "测试",
@@ -185,3 +185,30 @@ Get user projects
 
     [Project List][]
 
+## Project Memeber [/projects/{project_id}/members/{?member_id}]
+
+Project members
+
+### Add member [POST]
+
+添加项目成员
+
+只有 project-owner 才能添加
+
++ Request (application/json)
+
+        {
+          member_id: 'user_id'
+        }
+
++ Response 204
+
+### Remove member [DELETE]
+
+退出项目
+
+用户自己可以退出
+
+project-owner可以退出任意成员
+
++ Response 204
