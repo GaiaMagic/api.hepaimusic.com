@@ -169,7 +169,7 @@ Get your projects
 
     [Project List][]
 
-### GET /users/:user/projects
+### GET /users/{user}/projects
 
 Get user projects
 
@@ -213,9 +213,9 @@ project-owner可以退出任意成员
 
 + Response 204
 
-## Project Audio [/projects/{project_id}/audio]
+## Project Audio Single [/projects/{project_id}/current_audio]
 
-Project Audio
+Project Audio Single
 
 + Model (application/json)
 
@@ -242,13 +242,82 @@ Project Audio
                 }
             }
 
+### Get current audio [GET]
+
+音频附件最新版本
+
++ Response 200
+
+    [Project Audio Single][]
+
+### Change current audio [PUT]
+
+修改音频附件最新版本
+
++ Request (application/json)
+
+    {
+      audio_id: 'audio_id'
+    }
+
++ Response 200
+
+    {
+      success: true
+    }
+
+音频附件最新版本
+
++ Response 200
+
+    [Project Audio Single][]
+
+### DELETE /projects/{project_id}/audio/{audio_id}
+
+删除音频附件
+
+注意：只要是项目中的人都可以删除该项目的音频附件
+
++ Response 204
+
+## Project Audio List [/projects/{project_id}/audio]
+
+Project Audio List
+
++ Model (application/json)
+
+    + Body
+
+            [
+                {
+                    id: "1",
+                    name: "name",
+                    url: "audio url",
+                    source_url: "audio source url",
+                    current_version: true
+                    user: {
+                        id: "2"
+                        name: "user name",
+                        nickname: "user nickname",
+                        avatars: {
+                            "24x24": "",
+                            "50x50": "",
+                            "80x80": "",
+                            "150x150": "",
+                            "240x240": "",
+                            "origin": ""
+                        }
+                    }
+                }
+            ]
+
 ### Get project audio list [GET]
 
 音频附件列表
 
 + Response 200
 
-    [Project Audio][]
+    [Project Audio List][]
 
 ### Create project audio [POST]
 
@@ -256,13 +325,13 @@ Project Audio
 
 + Request (application/json)
 
-        {
-            name: "name",
-            url: "audio url",
-            source_url: "audio source url",
-            project_id: "projece_id"
-        }
+    {
+        name: "name",
+        url: "audio url",
+        source_url: "audio source url",
+        project_id: "projece_id"
+    }
 
 + Response 201
 
-    [Project Audio][]
+    [Project Audio Single][]
