@@ -185,7 +185,7 @@ Get user projects
 
     [Project List][]
 
-## Project Memeber [/projects/{project_id}/members/{?member_id}]
+## Project Memeber [/projects/{project_id}/members]
 
 Project members
 
@@ -210,6 +210,12 @@ Project members
 用户自己可以退出
 
 project-owner可以退出任意成员
+
++ Request (application/json)
+
+        {
+          member_id: 'user_id'
+        }
 
 + Response 204
 
