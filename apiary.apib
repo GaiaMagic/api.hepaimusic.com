@@ -185,7 +185,7 @@ Get user projects
 
     [Project List][]
 
-## Project Memeber [/projects/{project_id}/members]
+## Project Memeber [/projects/{project_id}/members/{?member_id}]
 
 Project members
 
@@ -210,12 +210,6 @@ Project members
 用户自己可以退出
 
 project-owner可以退出任意成员
-
-+ Request (application/json)
-
-        {
-          member_id: 'user_id'
-        }
 
 + Response 204
 
@@ -270,11 +264,11 @@ Project Audio Single
 
     [Project Audio Single][]
 
-### GET /projects/{project_id}/audio/{audio_id}
+### GET /projects/{project_id}/audio/{audio_id}/source_url
 
-获取音频附件
++ Response 200
 
-注意：只有owner和member才能获取私有project的音频附件
+    { url: 'audio_source_url' }
 
 ### DELETE /projects/{project_id}/audio/{audio_id}
 
