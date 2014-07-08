@@ -37,8 +37,13 @@ Existing project
                     id: "audio_id",
                     name: "xxx",
                     url: "http://xxx.xx",
-                    source_url: "http://xxx.xxxx",
-                    current_version: true
+                    current_version: true,
+                    with_source_url: true,
+                    is_released: true,
+                    // is_released 为 true 时才会返回 music 字段
+                    music: {
+                        id: 123
+                    },
                     user: {
                         id: "audio_user_id"
                         name: "name",
@@ -271,6 +276,8 @@ Project Audio Single
 
 ### GET /projects/{project_id}/audio/{audio_id}/source_url
 
+获取 audio 的源文件下载地址
+
 + Response 200
 
     { url: 'audio_source_url' }
@@ -296,8 +303,13 @@ Project Audio List
                     id: "1",
                     name: "name",
                     url: "audio url",
-                    source_url: "audio source url",
                     current_version: true
+                    with_source_url: true,
+                    is_released: true,
+                    // is_released 为 true 时才会返回 music 字段
+                    music: {
+                        id: 123
+                    },
                     user: {
                         id: "2"
                         name: "user name",
