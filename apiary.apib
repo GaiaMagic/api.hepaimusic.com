@@ -278,6 +278,14 @@ Project Audio Single
 
 获取 audio 的源文件下载地址
 
++ Request (application/json)
+
+    {
+        // 可选参数，如果为 true，url 会加上 download 参数，
+        // 参考：http://developer.qiniu.com/docs/v6/api/overview/dn/download-settings.html
+        download: true
+    }
+
 + Response 200
 
     { url: 'audio_source_url' }
